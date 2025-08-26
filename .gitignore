@@ -1,5 +1,10 @@
+
+*
+
 *libgen.li.pdf
 
 
 !**/*.tex
-
+!**
+!**/*[0-9]pdf
+!.gitignore
