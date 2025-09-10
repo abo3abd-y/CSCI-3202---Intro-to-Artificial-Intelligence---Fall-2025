@@ -5,5 +5,7 @@
 
 
 !**/*.tex
+!**/*.ipynb
+!**/*.py
 !**/*[0-9]pdf
 !.gitignore
