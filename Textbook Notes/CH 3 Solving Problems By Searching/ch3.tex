@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % Better font rendering
+\usepackage{geometry} % Page layout
+\geometry{margin=1in}
+\usepackage{setspace} % Line spacing
+\onehalfspacing
+\usepackage{hyperref} % Clickable links
+\usepackage{titlesec} % Custom section formatting
+\usepackage{enumitem} % Better lists
+\usepackage{amsmath, amssymb, amsthm} % Math
+\usepackage{tcolorbox} % For highlighted boxes
+\usepackage{graphicx} % For images/figures
+\usepackage{booktabs} % Better tables
+\usepackage{parskip}
+
+% ---------- Section Formatting ----------
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{1em}{}
+
+% ---------- Custom Environments ----------
+\newtcolorbox{definitionbox}{
+  colback=blue!5!white,
+  colframe=blue!50!black,
+  title=Definition,
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{examplebox}{
+  colback=green!5!white,
+  colframe=green!50!black,
+  title=Example,
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{notebox}{
+  colback=yellow!10!white,
+  colframe=yellow!50!black,
+  title=Note,
+  fonttitle=\bfseries
+}
+
+% ---------- Document ----------
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{AI Notes}} \\
+    \vspace{0.5em}
+    {\large Notes on \textit{Chapter 2: Intelligent Agents}} \\
+    \vspace{0.5em}
+    \textbf{Author: Abdullah Yassine} \\
+    \today
+\end{center}
+
+\tableofcontents
+\newpage
+
+% ---------- Example Structure ----------
+\section{Agents and Environments}
+\subsection{Agents}
+
+An \textbf{agent} is anything that can be viewed as perceiving its \textbf{environment} through its sensors and acting upon that environment through actuators. The environment could be anything, but more specifically is the part where the agent is interacting with its surrounding and the part that is affecting what the agent is perceiving.
+
+\textbf{Percept} is the input the agent is receiving from its environment at a given instant. \textbf{Percept sequence} is the entire history of everything the agent has perceived.
+
+\section{Good Behavior: The Concept of Rationality}
+
+A \textbf{rational agent} is the one that does the right thing. What does it mean when we say "right" thing?
+
+\subsection{Performance Measures}
+
+\textbf{Performance measure} is one that measures the state of environment created by the actions of the agent based upon its perceptions.
+
+\subsection{Rationality}
+
+What is rational depends on four things:
+
+\begin{itemize}
+    \item The performance measure that measures the criterion of success.
+    \item The agent's prior knowledge of the environment.
+    \item The actions that the agent can perform.
+    \item The agent's percept sequence to date.
+\end{itemize}
+
+So, the definition of a \textbf{rational agent} can be:
+
+\begin{quote}
+\textit{For each possible percept sequence, a rational agent should select an 
+action that is expected to maximize its performance measure, given the evidence 
+provided by the percept sequence and whatever built-in knowledge the agent has.}
+\end{quote}
+
+\subsection{Omniscience, learning, and autonomy}
+
+\textbf{Omniscience} is the idea that the agent has complete knowledge of the environment, all past events, and all future consequences of actions. In reality, creating such agent is impossible, unless if you happen to have a crystal ball or a time machine. There is a difference between rationality and perfectionsim. Being perfect means maximizing \textit{actual} performance while rationality maximizes \textit{expected} performance.
+
+Agents have to undergo \textbf{information gathering} and \textbf{exploration} so to \textit{modify future percepts} in order to make better choices. If you have an agent that crosses the road without looking both ways, then that's irrational. Checking both ways helps maximize expected performance.
+
+But if the agent completely relies on prior knowledge the designer has put without relying on its senses and acting upon them alongside history, we say the agent is lacking \textbf{autonmy}. A rational agent should be autonmous so it can learn from what it can in case there is incorrect prior knowledge.
+
+
+\section{The Nature of Environments}
+
+The \textbf{task environment} is the environment or problem setting on which the agent operates and it determines how we evaluate the agent's performance. Here, we define \textbf{PEAS} (Performance, Environment, Actuators, Sensors).
+
+We already discussed performance measure and environment.
+
+The \textbf{actuators} includes the things that the agent can use to act. \textbf{Sensors} is the things the agent can use to perceive the world.
+
+\subsection{Properties of task environments}
+
+\textbf{Fully observable vs partially observable}: if the agent's sensors give it a complete access to the state of the environment at each point in time, then we say the task environment is fully observable. Sometimes the sensors are faulty or parts of the state are missing from the sensor data. We say the environment is partially observable. Sometimes the agent has no senses, and we say the environment is \textbf{unobservable}. This is achievable and we can talk about it later.
+
+\textbf{Single agent vs. multi-agent}: environments which have one agent versus environments which have mulitple agents.
+
+\textbf{Competitive vs cooperative}: competitive environment is when you are competing against other agents where you are also trying to minimize their expected performance. Cooperative environment is when agents take actions in which it maximizes the performance of other agents.
+
+\textbf{Deterministic vs. nondeterministic}: Deterministic is the fact where the next environment is completely determined by the current state and the actions executed by the agent(s). Sometimes environments are so complex that it's impossible to keep track of all unobserved aspects. For practical reasons, we see the environment is nondeterministic.
+
+\textbf{Episodic vs. sequential}: Episodic environment is when agents take actions that don't affect the future at all. Agents that want to find defects in parts is episodic. Sequential is when the agents take actions that could affect all future decisions.
+
+\textbf{Static vs. dynamic}: When the agent is thinking and not doing anything, but the environment is changing, then it's dynamic; otherwise, static. If the environment is not changing while agent is thinking but agent's performance score is, then we call it \textbf{semidynamic}.
+
+\textbf{Discrete vs continous}: this is referring to \textit{state} of the environment, the way \textit{time} is handled, and to the \textit{percepts} and \textit{actions} of the agent.
+
+\textbf{Known vs unknown}: Known is when you have all the rules, all possible states, and outcomes of actions. Unknown is the opposite, and you may need to \textbf{learn} or \textbf{explore} to learn about the environment. This is different from the observable part because you can have observable environment but unknown and the opposite is true.
+
+
+
+
+
+
+
+\end{document}

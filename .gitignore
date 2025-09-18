@@ -1,11 +1,15 @@
-
-*
-
 *libgen.li.pdf
+**/*.toc
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.out
+**/*.synctex.gz
+**/__pycache__
 
-
-!**/*.tex
-!**/*.ipynb
-!**/*.py
-!**/*[0-9]pdf
-!.gitignore
+# !**/*.tex
+# !**/*.ipynb
+# !**/*.py
+# !**/*[0-9]pdf
+# !.gitignore
