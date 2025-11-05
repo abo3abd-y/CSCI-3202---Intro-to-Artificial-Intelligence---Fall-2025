@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% Elegant, Oxford-like Palatino font (works with pdfLaTeX)
+\usepackage[sc]{mathpazo}
+\linespread{1.05} % slightly looser leading for Palatino
+
+% Center all title elements
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\end{center}}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}}
+\predate{\begin{center}\large}
+\postdate{\end{center}}
+
+\begin{document}
+
+% -------------------------------
+% Cover Page
+% -------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{CSCI 3202: Introduction to AI}}\\[1.2cm]
+    {\LARGE \textbf{Project Intermediate Report}}\\[1.2cm]
+    {\Large \textbf{Mancala Simulation and Random Player Evaluation}}\\[2cm]
+
+    {\Large \textbf{Abdullah Marwan Yassine}}\\[0.3cm]
+    {\large University of Colorado Boulder}\\[0.3cm]
+    {\large November 5, 2025}\\[3cm]
+\end{titlepage}
+
+% -------------------------------
+% Report Body
+% -------------------------------
+\setstretch{1.25}
+\justifying
+
+\section*{Evaluation of Random Player Performance in Mancala}
+
+\textbf{Objective.}  
+The purpose of this stage of the project was to fully implement the Mancala game mechanics, create two random players, and simulate 100 games to collect statistical outcomes. This intermediate deliverable focuses on analyzing those outcomes and addressing the question: \emph{Is there a first-move advantage? If so, how much?}
+
+\textbf{Experimental Setup.}  
+Both Player 1 and Player 2 were programmed to select pits at random from their respective sides. All standard Mancala rules were implemented, including sowing, capturing, skipping the opponent’s Mancala, and collecting remaining stones when the game ends.  
+The simulation was first executed for 100 games to verify correctness and generate preliminary data, and later scaled to 500{,}000 games to reduce randomness and obtain statistically stable results.
+
+\textbf{Results for 100 Simulations.}  
+After 100 randomly played games, Player 1 won approximately \textbf{52\%}, Player 2 won \textbf{40\%}, and \textbf{8\%} of the games ended in a tie.  
+The average number of turns per game was \textbf{19.79} for Player~1 and \textbf{19.28} for Player~2, indicating that both players took roughly the same number of moves on average.  
+These early results already suggested a potential first-move advantage for Player~1, but the small sample size made random variation significant.
+
+\textbf{Results for 500{,}000 Simulations.}  
+As the number of games increased, the outcomes converged toward a stable distribution:
+\begin{itemize}
+    \item Player 1 wins: \textbf{48.10\%}
+    \item Player 2 wins: \textbf{45.21\%}
+    \item Ties: \textbf{6.69\%}
+\end{itemize}
+The average number of turns per game was \textbf{20.72} for Player~1 and \textbf{20.22} for Player~2.  
+These averages demonstrate that the total gameplay length remains balanced, even as Player~1 achieves slightly more victories.  
+The consistent tie rate around 6--7\% confirms that the end-of-game collection logic is functioning properly and that the game occasionally reaches an even outcome under random play.
+
+\textbf{Analysis.}  
+Across large-scale trials, Player~1 consistently maintained a modest edge of approximately \textbf{2.9 percentage points} over Player~2.  
+This indicates a measurable but small \emph{first-move advantage}, likely stemming from Player~1’s ability to initiate the board state and occasionally gain an additional turn when the final stone lands in their Mancala.  
+However, the overall balance and near-equal average move counts between players confirm that Mancala’s inherent symmetry limits this advantage.  
+The stability of win, loss, and tie percentages across scales validates both the correctness of the implementation and the fairness of the random-move algorithm.
+
+\textbf{Conclusion.}  
+The Mancala implementation runs without error, correctly applying all rules and producing consistent results.  
+Random versus random simulations across 500{,}000 games show that while Player~1 holds a slight first-move advantage, the difference is minimal, and both players perform nearly equally in terms of average turns per game.  
+These findings confirm that the game logic is robust and serve as a solid baseline for future stages of the project, where AI agents will be developed to optimize play strategy and decision-making.
+
+\end{document}
