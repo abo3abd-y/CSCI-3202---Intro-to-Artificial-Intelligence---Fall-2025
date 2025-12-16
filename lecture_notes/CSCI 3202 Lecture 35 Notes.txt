@@ -1,0 +1,117 @@
+### CSCI 3202 
+### Lecture 35
+### November 17, 2025
+\
+
+Cartoons: Power AI Needs.jpeg
+
+Loose Parts by Dave Blazek.  https://www.loosepartscomic.com/
+
+### Announcements
+* Project due Today
+	- There is a link to upload your project on Canvas
+	- ==Both partners must submit a report==
+* Interview grading starting on Wednesday, November 19
+	- Link for signup available on Canvas
+	- 15 minute interviews
+	- Interviews are done on Zoom
+	- Share your IDE
+	- Run your project and answer questions
+	- ==We will do interview grading after fall break as well==
+* You may resubmit Worked Out Problems (Q13-Q20) only from the midterm for regrading.  The points you receive will replace your original score on the midterm.  If you do not submit anything, there will be no change in your score.  You have until Friday November 21 to submit.  No late submissions will be accepted
+	- Before calculating your final grade, I will add 5 points to your midterm exam score due to the length of the exam 
+	- These points will only count towards your midterm score.  They will not count as extra credit toward your course grade
+
+### Final Exam
+* Will be remote ("Take Home") on Canvas
+* Time limited to 3 hours once you open the exam
+* On paper
+* Take a photo of your results and turn in photo
+* Comprehensive, but focused mainly on last half of semester
+* Similar in format to Midterm
+* Will be due at the listed time of our Final, Thursday at 4:00 pm
+* No late exams will be accepted
+
+### Quiz #11
+* Average is 70%
+* Review
+
+### Fitting a Decision Tree
+* Fit a decision tree to Titanic Survivors Data
+* Uses Entropy instead of Ginni
+	- Entropy describes the amount of randomness or uncertainty in a sample
+	- The larger the entropy, the more random or uncertain it is
+	- Entropy is similar to Ginni, but entropy has very nice mathematical properties
+	- https://www.geeksforgeeks.org/machine-learning/entropy-in-information-theory/
+* Example: https://erickhangati.com/decision-tree-explained-through-titanic-dataset/
+
+### Deep Learning
+#### What is Deep Learning?
+Deep learning is a subfield of machine learning and artificial intelligence (AI) that focuses on algorithms inspired by the structure and function of the human brain, known as artificial neural networks. These models are designed to automatically learn patterns and representations from data, especially when dealing with large and complex datasets.
+- Machine Learning (ML): The broader field of AI that involves training algorithms to learn from data.
+- Deep Learning: A type of machine learning that uses neural networks with many layers (hence "deep") to automatically learn hierarchical patterns in data.
+
+Deep learning is often used to solve problems that are too complex for traditional machine learning algorithms, such as image recognition, speech processing, and natural language understanding.
+
+Handwritten-digits-examples-Image-taken-from-36-224150634.png
+
+#### How Do Deep Learning Models Work?
+
+Deep learning models are built on neural networks, which are inspired by the human brain’s architecture. At a high level, a neural network is made up of three parts:
+- Input Layer: The raw data is fed into the network. Each data point is transformed into a number (or set of numbers) representing a feature of the data.
+- Hidden Layers: These are intermediate layers where the network learns features and patterns from the input data. Each layer contains neurons that take inputs, apply weights, add a bias, and pass the result through an activation function.
+- Output Layer: This layer produces the final output (e.g., a class label in classification tasks or a value in regression tasks).
+
+#### Neurons and Layers in a Neural Network
+
+Each neuron in a layer is connected to neurons in the previous and subsequent layers through synapses (also called weights). The weights control the strength of the signal passed between neurons.
+
+The neurons are organized into layers:
+
+- Input Layer: Receives data.
+- Hidden Layers: Perform computations and learn patterns.
+- Output Layer: Produces the final result.
+
+Image of a Simple Neural Network:
+
+introduction-to-deep-learning-5-1411678615.jpg
+
+#### Key Concepts in Deep Learning
+* Activation Functions
+
+Activation functions introduce non-linearity into the network, enabling it to learn complex patterns. Some commonly used activation functions include:
+
+- Sigmoid: Outputs a value between 0 and 1, used in binary classification.
+- ReLU (Rectified Linear Unit): Outputs the input directly if positive, otherwise, it outputs zero.
+- Softmax: Often used in multi-class classification to output a probability distribution over classes.
+
+Image of Activation Functions:
+
+* Training Deep Learning Models
+
+The training process involves backpropagation, a technique used to minimize the error of the model by adjusting the weights using gradient descent. The steps are:
+
+- Forward Pass: The input data passes through the network, and the output is computed.
+- Loss Function: The loss function calculates the difference between the predicted output and the actual value.
+- Backward Pass (Backpropagation): The error is propagated back through the network to update the weights using optimization techniques like stochastic gradient descent (SGD).
+
+* Overfitting and Regularization
+	- Deep networks can overfit, meaning they perform well on training data but fail to generalize to new, unseen data
+	- Regularization is a way to reduce overfitting 
+
+### Example of a Very Simple Neural Network
+* The code does not run correctly
+* We are using the illustrations and explanations here
+* ==Perceptron for Beginners.pdf==
+
+### Deep Learning Example
+* Train Neural Network on Handwritten Digits
+* ==Deep Learning Example.ipynb==
+
+### Reading
+* How does ChatGPT Really Work_ The New York Times.pdf
+* https://www.zdnet.com/article/how-chatgpt-actually-works-and-why-its-been-so-game-changing/
+
+### Upcoming
+* Large Language Models
+
